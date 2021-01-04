@@ -6,7 +6,6 @@ interface ContainerProps {
     height:number;
     pipeBottom:number;
     pipeLeft: number;
-    gap:number;
   }
   bottom?:boolean;
 }
@@ -17,6 +16,6 @@ export const Container = styled.View<ContainerProps>`
   width: ${props => props.pipe.width}px;
   height:${props => props.pipe.height}px;
   left: ${props => props.pipe.pipeLeft}px;
-  bottom:${props => props.bottom ? 0 : props => props.pipe.height + props.pipe.gap}px;
+  ${props => props.bottom ? `bottom:0;` : `top:0`}
 
 `;
